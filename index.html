@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+
+      .container {
+        background-color: rgb(141, 148, 156);
+        display: grid;
+        border: 0px solid orange;
+        height: auto;
+        width: 100;
+        grid-template-areas:
+          "one one two two"
+          "three three three three"
+          "four four four four"
+          "fiveone fiveone Bfiveone Bfiveone"
+          "Bfivetwo Bfivetwo fivetwo fivetwo"
+          "fivethree  fivethree Bfivethree Bfivethree"
+          "Bfivefour Bfivefour fivefour fivefour"
+          "six six six six"
+          "f1 f2 f3 f4"
+          "f5 f5 f5 f5";
+
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 60px 600px 0px 500px 500px 500px 500px 100px 280px 100px;
+        background-color: white;
+      }
+
+      .item-1 {
+        padding: 8px;
+        background-color: #333333;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        float: right;
+        /*border: 0px solid lightskyblue;*/
+        border-top: 6px solid #333333;
+        border-bottom: 4px solid red;
+        margin-top: auto;
+        margin-bottom: auto;
+        grid-area: one;
+      }
+
+      .item-2 {
+        background-color: #333333;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        /*border: 0px solid lightskyblue;*/
+        text-align: center;
+        border-top: 4px solid #333333;
+        border-bottom: 4px solid red;
+        grid-area: two;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 17px;
+        padding-bottom: 16px;
+      }
+
+      .item-3 {
+        background-image: url("img/RedStripeVideo.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        border: 0px solid purple;
+        grid-area: three;
+      }
+
+      .item-4 {
+        background-color: white;
+        /*border: 0px solid lightskyblue;*/
+        border: 0px solid magenta;
+        text-align:center;
+        grid-area:four;
+      }
+
+      .item-5-1 {
+        margin: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        background-image:url("img/Red1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100px;
+        text-align: center;
+        font-weight: bold;
+        /*border: 0px solid lightskyblue;*/
+        border: 3px solid rgb(211, 211, 211);
+        grid-area: fiveone;
+      }
+
+      .item-5-2 {
+        margin: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        background-image:url("img/Red3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100px;
+        text-align: center;
+        font-weight: bold;
+        /*border: 0px solid lightskyblue;*/
+        border: 3px solid rgb(211, 211, 211);
+        grid-area: fivetwo;
+      }
+
+      .item-5-3 {
+        margin: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        background-image:url("img/Red2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100px;
+        text-align: center;
+        font-weight: bold;
+        /*border: 0px solid lightskyblue;*/
+        border: 3px solid rgb(211, 211, 211);
+        grid-area: fivethree;
+      }
+
+      .item-5-4 {
+        margin: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        background-image:url("img/Red4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100px;
+        text-align: center;
+        font-weight: bold;
+        /*border: 0px solid lightskyblue;*/
+        border: 3px solid rgb(211, 211, 211);
+        grid-area: fivefour;
+      }
+
+      .item-B5-1 {
+        padding: 20px;
+        background-color: white;
+        /*border: 0px solid lightskyblue;*/
+        border: 0px dotted rgb(134, 18, 18);
+        grid-area: Bfiveone;
+      }
+
+      .item-B5-2 {
+        padding: 20px;
+        background-color: white;
+        /*border: 0px solid lightskyblue;*/
+        border: 0px dotted rgb(134, 18, 18);
+        grid-area: Bfivetwo;
+      }
+
+      .item-B5-3 {
+        padding: 20px;
+        background-color: white;
+        /*border: 0px solid lightskyblue;*/
+        border: 0px dotted rgb(134, 18, 18);
+        grid-area: Bfivethree;
+      }
+
+      .item-B5-4 {
+        padding: 20px;
+        background-color: white;
+        /*border: 0px solid lightskyblue;*/
+        border: 0px dotted rgb(134, 18, 18);
+        grid-area: Bfivefour;
+      }
+
+      .item-6 {
+        padding: 20px;
+        background-color: white;
+        /*border: 0px solid lightskyblue;*/
+        border: 0px solid mediumspringgreen;
+        grid-area: six;
+      }
+
+      .item-space {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        /*border: 0px solid lightskyblue;*/
+        border: 0px dotted red;
+        grid-area: space;
+      }
+
+      img {
+        padding: 10px;
+        width: 100%;
+        max-width: 150px;
+        border: 1px;
+      }
+
+      .txt {
+        padding-left: 20px;
+        /*text-align: right;*/
+      }
+
+      .p1 {
+        text-align: right;
+      }
+
+      .p2 {
+        text-align: center;
+        padding-right: auto;
+        padding-left: auto;
+      }
+
+      .centered {
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 200px;
+      }
+
+      .item-footer1 {
+        text-align: center;
+        background-color: #333333;
+        /*border: 0px solid lightskyblue;*/
+        border: 4px solid #333333;
+        border-top: 30px solid #333333;
+        grid-area: f1;
+      }
+
+      .item-footer2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+        background-color: #333333;
+        /*border: 0px solid lightskyblue;*/
+        border: 4px solid #333333;
+        border-top: 40px solid #333333;
+        grid-area: f2;
+      }
+
+      .item-footer3 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+        background-color: #333333;
+        /*border: 0px solid lightskyblue;*/
+        border: 4px solid #333333;
+        border-top: 40px solid #333333;
+        grid-area: f3;
+      }
+
+      .item-footer4 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+        background-color: #333333;
+        /*border: 0px solid lightskyblue;*/
+        border: 4px solid #333333;
+        border-top: 40px solid #333333;
+        grid-area: f4;
+      }
+
+      .item-footer5 {
+        padding-top: 35px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+        background-color: #333333;
+        /*border: 0px solid lightskyblue;*/
+        border: 4px solid #333333;
+        border-top: 2px solid #919191;
+        grid-area: f5;
+      }
+
+      .span1{
+        font-size: 36px;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(34, 34, 34);
+      }
+
+      .span2{
+        font-size: 15px;
+        font-family: Helvetica, sans-serif;
+        font-weight: normal;
+        color: rgb(34, 34, 34);
+        line-height: 25px;
+      }
+
+      .span3{
+        font-size: 36px;
+        font-family: Helvetica, sans-serif;
+        color: rgb(34, 34, 34);
+        line-height: 36px;
+      }
+
+      .span4{
+        font-size: 22px;
+        font-family: Helvetica, sans-serif;
+        color: rgb(34, 34, 34);
+        line-height: 36px;
+      }
+
+      .button {
+        margin-top: 10px;
+        font-weight: bold;
+        ;
+        font-size: 13px;
+        width: 80px;
+        height: 30px;
+        border-radius: 0px;
+        cursor: pointer;
+        border: 0px solid white;
+        background: transparent;
+        position: relative;
+        padding: 0;
+        z-index: 2;
+
+
+        color: #fff;
+  /*For IE*/
+      /* background-color: #4caf50; Green background */
+      /* border: 1px solid green; Green border */
+      /* color: white; White text */
+      /* padding: 10px 3vw;Some padding */
+      /* cursor: pointer; Pointer/hand icon */
+      /* width: 100%; Set a width if needed */
+      /* display: block; Make the buttons appear below each other */
+      }
+
+      button > span {
+      display: inline-block;
+      padding: 8px 16px;
+      background: linear-gradient(45deg, #fff 50%, white 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+    }
+    button:after {
+      border-radius: 0px;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(45deg, red 50%, transparent 50%);
+      z-index: -2;
+    }
+
+    button > span,
+    button:after {
+      background-size: 300%;
+      background-position: 100%;
+      transition: 1s, font-size 0.2s;
+    }
+
+    button:hover > span,
+    button:hover:after {
+      background-position: 0;
+
+      color: orangeRed;
+      /*For IE*/
+    }
+
+    .txt2{
+      white-space: nowrap;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      font-weight: black;
+      font-size: 80px;
+      mix-blend-mode: normal;
+      text-shadow: 0 0 1px rgb(179, 179, 179)
+      , 0 0 1px grey;
+    }
+
+    .buttonX {
+    font-weight: bold;
+    background-color: rgb(230, 230, 230);
+    border: none;
+    color: #333333;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 840px ){
+    .container {
+        background-color: rgb(141, 148, 156);
+        display: grid;
+        border: 0px solid orange;
+        height: auto;
+        width: auto;
+        grid-template-areas:
+          "one one two two"
+          "three three three three"
+          "four four four four"
+          "fiveone fiveone Bfiveone Bfiveone"
+          "fivetwo fivetwo Bfivetwo Bfivetwo"
+          "fivethree fivethree Bfivethree Bfivethree"
+          "fivefour fivefour Bfivefour Bfivefour"
+          "six six six six"
+          "f1 f2 f3 f4"
+          "f5 f5 f5 f5";
+
+        grid-template-columns: auto 300px auto auto;
+        grid-template-rows: 60px 600px 0px 400px 400px 400px 400px auto 280px 100px;
+        background-color: white;
+      }
+    .button {
+        margin-top: 10px;
+        font-weight: bold;
+        ;
+        font-size: 9px;
+        width: 60px;
+        height: 30px;
+        border-radius: 0px;
+        cursor: pointer;
+        border: 0px solid white;
+        background: transparent;
+        position: relative;
+        padding: 0;
+        z-index: 2;
+
+
+        color: #fff;
+  /*For IE*/
+      /* background-color: #4caf50; Green background */
+      /* border: 1px solid green; Green border */
+      /* color: white; White text */
+      /* padding: 10px 3vw;Some padding */
+      /* cursor: pointer; Pointer/hand icon */
+      /* width: 100%; Set a width if needed */
+      /* display: block; Make the buttons appear below each other */
+      }
+
+      .span1{
+        font-size: 33px;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(34, 34, 34);
+      }
+
+      .span2{
+        font-size: 13px;
+        font-family: Helvetica, sans-serif;
+        font-weight: normal;
+        color: rgb(34, 34, 34);
+        line-height: 0px;
+      }
+
+      .item-footer2 {
+        padding-left: 130px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-weight: bold;
+        background-color: #333333;
+        /*border: 0px solid lightskyblue;*/
+        border: 4px solid #333333;
+        border-top: 40px solid #333333;
+        grid-area: f2;
+      }
+
+      .logoX{
+        padding-left: 40px;
+
+        transform: scale(2,2);
+      }
+      
+      
+  }
+
+    /* Chrome 29+ */
+    @media screen and (-webkit-min-device-pixel-ratio:0)
+      and (min-resolution:.001dpcm) { 
+        .item-3 {
+        background-image: url("img/RedStripeVideo.gif");
+      }
+    }
+
+    /* Chrome 22-28 */
+    @media screen and(-webkit-min-device-pixel-ratio:0) {
+      .item-3 {
+        background-image: url("img/RedStripeVideo.gif");
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item-1">
+        <img src="img/red1.png" alt="" class="logo1">
+      </div>
+
+      <div class="item-2">
+        <button class="button button2">Home</button>
+        <button class="button button3">Services</button>
+        <button class="button button4">About Us</button>
+        <button class="button button5">Contact Us</button>
+        <button class="button button5">Careers</button>
+      </div>
+
+      <div class="item-3">
+        <div class="centered">
+          <span class="txt2">
+            We Build Value, 
+            <br>
+            Where Others Can't</span>
+          <br>
+        </div>
+      </div>
+
+      <div class="item-4">
+      
+      <span class="span3">
+        <br>
+      </span>
+  
+      </div>
+      <div class="item-5-1"></div>
+      <div class="item-B5-1"><p>
+        <span class="span1">Information Technology</span>
+        <br>
+        <br>
+        <span class="span2">
+          RSM has deep experience designing solutions and implementing new technologies that give our clients a competitive edge. Whether you need skills and experience to fill a gap on your team,  consulting on how to best design your infrastructure and cyber security strategy, or assistance on how to become more efficient and reduce costs.</span>
+        
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">All-encompassing I.T. Services:</span> Whether you need to build, renew, or completely outsource your I.T. Department, RSM can help.  Allow us to make a customized deployment strategy for you today!</span></li>
+        </span>
+        </p></div>
+
+      <div class="item-5-2"></div>
+      <div class="item-B5-2"><p>
+        <span class="span1">Accounting</span>
+        <br>
+        <br>
+        <span class="span2">
+          Accounting services are paramount for any business big or small.  Let us help you manage your bottom line.</span>
+        
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">Corporate and Payroll Taxes: </span> Managing your payroll and corporate taxes can be complex and time-consuming for many small businesses. Our services will help you manage there taxes more efficiently allowing your business more time to grow.</span></li>
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">Grant Recipient: </span> We give company-wide guidance as it pertains to recipients, i.e., grantees, making the process of receiving money much easier.</span></li>
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">Financial Reporting: </span>  Red Stripe Management is a direct lender for non Title-IV entities with students looking for private student loans.</span></li>
+        </span>
+        </p></div>
+
+      <div class="item-5-3"></div>
+      <div class="item-B5-3"><p>
+        <span class="span1">Legal</span>
+        <br>
+        <br>
+        <span class="span2">
+          The legal business world can be hard to navigate no matter what stage your organization is in.  We offer guidance on many legal sectors.</span>
+        
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">Compliance:</span> RSM provides regulatory compliance services and consulting for clients. Our expert regulatory compliance team analyzes both federal and state regulatory prerequisites, and assists in meeting regulatory burdens as well as providing training and instruction on current and future requirements.</span></li>
+
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">Arbitration:</span> RSM provides regulatory compliance services and consulting for clients. Our expert regulatory compliance team analyzes both federal and state regulatory We understand that there is a lot on the line in arbitration. You can count on us to provide highly skilled arbitrators who will save you time and money. RSM offers efficiency, speed, and results.</span></li>
+
+        </span>
+        </p></div>
+
+      <div class="item-5-4"></div>
+      <div class="item-B5-4"><p>
+        <span class="span1">Marketing and Strategy</span>
+        <br>
+        <br>
+        <span class="span2">        
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">Brand Management:</span> Brand management services are curating crafting and managing a brand. The brand management process integrates together a perfect mix of modules including defining the brand, positioning the brand, and delivering the brand value constantly.</span></li>
+
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">SEO:</span> Our team uses modern SEO services, backed by the best digital practices, to increase your traffic & rankings for vetted keywords and long-tail phrases that drive business to your site.</span></li>
+
+          <li style="padding-left: 20px;""><span class="span2"><span style="font-weight: bold;">Content Creation:</span> RSM creates relevant content that starts conversations with prospects. We nurture those discussions into relationships and, eventually, sales, by sharing great stories about your business told through the right type of content, delivered at the right time on the right channels.</span></li>
+        </span>
+        </p></div>
+
+      <div class="item-6">
+      <!--!  <span class="span2">
+        <span class="span1"> Mission Statement</span>
+        <br>
+        <br>
+        Our approach is to work with lenders, schools,regulators and
+        education-related companies to achieve practical and realistic solutions
+        for clients and our portfolio companies. Our knowledge of the industry
+        and experience in operating vocational, religious, and alternative
+        post-secondary schools allows us to execute transactions of all sizes.
+        With our exclusive focus on education, Red Stripe Management works with
+        management teams, boards, shareholders, and stakeholders across the
+        education spectrum. With our capital and expertise, we bring stability,
+        capital, and knowledge to institutions. If you are looking for capital,
+        securitization, or M&A services, please contact us.
+        </span>
+      -->
+      </div>
+
+      <div class="item-footer1"><img src="img/red1.png" alt="" class="logoX"></div>
+      <div class="item-footer2">
+        <span style="font-weight: normal; font-size: 20px"
+          >Navigation Links</span
+        >
+        <ul style="list-style-type: none; padding-left: 0">
+          <li>Home</li>
+          <li>Services</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+      <div class="item-footer3">
+        <span style="font-weight: normal; font-size: 20px"
+          >Join Our Mailing List</span>
+          <ul style="list-style-type: none; padding-left: 0">
+            <li>Email</li>
+            <li><form action="/action_page.php">
+              <input type="text" id="fname" name="fname"><br>
+            </form></li>
+            <li>
+              <br>
+              <input type="button" class="buttonX" value="Submit">
+
+            </li>
+          </ul>
+      </div>
+
+      <div class="item-footer4">
+        <span style="font-weight: normal; font-size: 20px"
+          >Contact Information</span>
+          <ul style="list-style-type: none; padding-left: 0">
+          
+            <li>Address:</li>
+            <li>Red Stripe 1320 Main St,</li>
+            <li>STE 300, Columbia,</li>
+            <li>SC 29201</li>
+            <li>Phone:</li>
+            <li>(803) 992-8987</li>
+            <li><br></li>
+            <li>Email:</li>
+            <li>info@redstripemanagement.com</li>
+          </ul>
+      </div>
+
+      <div class="item-footer5">Copyright © 2020 Red Stripe Management</div>
+
+    </body>
+</html>
